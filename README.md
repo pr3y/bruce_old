@@ -31,15 +31,9 @@ Hello, my name is Bruce.
 
 ## User Interface
 There are three main controls:
-* Home - Stops the current process and returns you to the menu from almost anywhere in NEMO
+* Home - Stops the current process and returns you to the menu from almost anywhere in BRUCE
 * Next - Moves the cursor to the next menu option. In function modes, this usually stops the process and returns you to the previous menu.
 * Select - Activates the currently-selected menu option, and wakes up the dimmed screen in function modes  
-
-* StickC and StickC-Plus
-  * Power: Long-press the power button for 6 seconds to turn off the unit
-  * Home: Tap the power button (closest to the USB port)
-  * Next: Tap the side button
-  * Select: Tap the M5 button on the front of the unit  
 
 * Cardputer
   * Home: Tap the Esc/~/` key or the Left-Arrow/, key
@@ -51,9 +45,13 @@ In EVIL Portal mode, BRUCE reads the keyboard input for the SSID and activates a
 * EVIL Portal serves a fake login page that claims to provide internet access if you log in.
 * This is a social engineering attack, and will log the username and passwords entered on the page. 
 * You can view these credentials by connecting to the portal from your own device and browsing to http://172.0.0.1/creds
-* If your device has an SD Card reader with a FAT filesystem formatted card inserted, the usernames and passwords will be logged to nemo-portal-creds.txt on the SD Card for you to peruse later. 
+* If your device has an SD Card reader with a FAT filesystem formatted card inserted, the usernames and passwords will be logged to evil-portal-creds.txt on the SD Card for you to peruse later. 
 * SD Card support is only enabled by default on the M5Stack Cardputer platform. It can be enabled on M5Stick devices but an SD Card reader must be built and attached to the front panel pin header.
 * EVIL Portal is only for use on professional engagements with a valid scope of work, educational or demonstration purposes. Storage, sale, or use of personal information without consent is against the law. 🤓
+
+## Templates for EVIL PORTAL
+The default EVIL PORTAL if you dont have a SD card attached is the Google template, but now its easier to create you own!
+On templates folder of this repository there is a Facebook and Google samples which you can put on the root of your SD card, then go to EVIL PORTAL and select the template file.
 
 ## BadUSB
 To choose a payload for the BadUSB on Cardputer instead of getting rickrolled, you need to create a file on the SD card root directory called "badpayload.txt".
@@ -71,9 +69,9 @@ This is the absolute easiest way to get BRUCE
 ## Install .bin files manually with esptool.py
 * Install ESP-IDF tools per the [Espressif Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/)
 * Open the esp-idf CMD tool (on Windows) - on Mac or Linux, esp-idf.py and esptool.py should be in the system path.
-* esptool.py --port COMPORT -b 115200 write_flash -z 0x0 M5Nemo-VERSION.bin
+* esptool.py --port COMPORT -b 115200 write_flash -z 0x0 bruce.bin
   * port may be a COM port e.g. COM4, COM11 on Windows. On Mac and Linux it will usually be in /dev such as /dev/ttyUSB0, /dev/ttyACM0 or /dev/cu.usbserial-3
-  * M5Nemo-VERSION.bin should be a version you downloaded from a GitHub Release -- preferably the latest available.
+  * bruce.bin should be a version you downloaded from a GitHub Release -- preferably the latest available.
 
 ## Building from Source
 If you want to customize BRUCE or contribute to the project, you should be familiar with building BRUCE from source.
@@ -113,11 +111,11 @@ Contributions are welcome. Please look at the GitHub Issues for ideas to help en
 Things I'd like help on:
 * A new "Region" of TV-B-Gone that's full of additional IR codes that can turn RGB LED strips, air conditioners, fans, sound bars and the like on and off
 * Help refactoring how menus work. The way it was built was fine when it was one main menu with a few options. Now, adding a new sub-menu involves a lot of duplicated code.
-* TELNET client
+* ~~TELNET client~~
 * SMB client
 * Simple network scan
 * ~~BadUSB~~
-* Select EVIL portal template from SD card
+* ~~Select EVIL portal template from SD card~~
 
 Things I probably won't merge in:
 * Bulk wifi deauthentication spamming
