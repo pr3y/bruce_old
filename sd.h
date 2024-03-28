@@ -1,4 +1,5 @@
-
+#if !defined(SH_H)
+#define SD_H
 bool sdcardMounted = false;
 #if defined(SDCARD)
   #include <FS.h>
@@ -80,4 +81,4 @@ bool setupSdCard() {
   return false;
 #endif
 }
-
+#endif
