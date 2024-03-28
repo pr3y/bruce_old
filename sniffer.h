@@ -20,7 +20,7 @@
 #include <Arduino.h>
 #include <TimeLib.h>
 #include "FS.h"
-#include "SD.h"
+#include "sd.h"
 #include "SPI.h"
 #include "PCAP.h"
 
