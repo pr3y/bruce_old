@@ -12,7 +12,7 @@
 #include "SPI.h"
 #if defined(ESP32)
 	#include "FS.h"
-	#include "SD.h"
+	#include "sd.h"
 #else
 	#include <SPI.h>
 	#include <SdFat.h>
