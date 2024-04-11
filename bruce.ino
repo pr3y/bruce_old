@@ -2455,8 +2455,6 @@ int portal_size = 0;
 int cursorTemplate = 0;
 //String selectedTemplate;
 
-void drawmenuTemplate(MenuItem menu[], int size);
-
 void drawmenuTemplate(MenuItem menu[], int size) {
   DISP.setTextSize(SMALL_TEXT);
   DISP.fillScreen(BGCOLOR);
